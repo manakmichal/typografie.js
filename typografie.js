@@ -63,27 +63,27 @@ function improveTypography(string){
   if(typeof string !== 'string')
     throw ("The parametr must be a string");
 
-  for(let rule of regulars.quote){
+  for(let rule of Rules.quote){
     string = string.replace(rule[0], rule[1]);
   }
 
-  for(let rule of regulars.dash){
+  for(let rule of Rules.dash){
     string = string.replace(rule[0], rule[1]);
   }
 
-  for(let rule of regulars.space){
+  for(let rule of Rules.space){
     string = string.replace(rule[0], rule[1]);
   }
 
-  for(let rule of regulars.elipse){
+  for(let rule of Rules.elipse){
     string = string.replace(rule[0], rule[1]);
   }
 
-  for(let rule of regulars.shorts){
+  for(let rule of Rules.shorts){
     string = string.replace(rule[0], rule[1]);
   }
 
-  for(let rule of regulars.word){
+  for(let rule of Rules.word){
     string = string.replace(rule[0], rule[1]);
   }
 
