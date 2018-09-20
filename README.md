@@ -5,7 +5,8 @@ Umí se postarat o to, aby
 * Odstavec nekončil spojkou.
 * Text obsahoval české uvozovky.
 * Byl využit znak elipsis místo 3 teček.
-* Aby se zalomilo celé číslo i s jednotkou.
+* Se zalomilo celé číslo i s jednotkou.
+* Čísla byla správně formátována, např. 1 201 102 místo 1201102.
 * Datum vypadalo jako 10. 10. 2011, pokud nevložíte mezery.
 * Se využily ligatury fi, fl, fl.
 
