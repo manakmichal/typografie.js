@@ -1,8 +1,4 @@
 var Rules = {
-    // rules for dates
-    date: [
-      [/(\d{2}\.)(\d{2}\.)(\d{4})/g, "$1"+" "+"$2"+" "+"$3"]
-    ],
     // rules for czech quotes
     quote: [
       [/ “/g, " „"],
@@ -28,6 +24,10 @@ var Rules = {
       [/(\d+[\.])( )(\w|%)/g, "$1"+"&nbsp;"+"$3"],
       [/(\d+)( )(\d)/g, "$1"+"&nbsp;"+"$3"],
       [/([§|#])( )(\d)/g, "$1"+"&nbsp;"+"$3"]
+    ],
+    // rules for dates
+    date: [
+      [/(\d{1,2}\.)(\d{1,2}\.)(\d{4})/g, "$1"+"&nbsp;"+"$2"+" "+"$3"]
     ],
     ligatures: [
       [/fi/g, "ﬁ"],
@@ -59,10 +59,6 @@ function improveTypography(string){
   if(typeof string !== 'string')
     throw ("The parametr must be a string");
 
-  for(let rule of Rules.date){
-    string = string.replace(rule[0], rule[1]);
-  }
-
   for(let rule of Rules.quote){
     string = string.replace(rule[0], rule[1]);
   }
@@ -72,6 +68,10 @@ function improveTypography(string){
   }
 
   for(let rule of Rules.space){
+    string = string.replace(rule[0], rule[1]);
+  }
+
+  for(let rule of Rules.date){
     string = string.replace(rule[0], rule[1]);
   }
 
