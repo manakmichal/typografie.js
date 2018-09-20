@@ -9,6 +9,10 @@ var Rules = {
     dash: [
       [/ - /g, " – "]
     ],
+    // rule for number formatting
+    number: [
+      [/(\d)(?=(\d{3})+(?!\d))/g, "$1 "]
+    ],
     // rules for hard spaces
     space: [
       [/  /g, " "],
@@ -56,6 +60,10 @@ function improveTypography(string){
   }
 
   for(let rule of Rules.dash){
+    string = string.replace(rule[0], rule[1]);
+  }
+
+  for(let rule of Rules.number){
     string = string.replace(rule[0], rule[1]);
   }
 
