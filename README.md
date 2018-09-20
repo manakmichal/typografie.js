@@ -1,5 +1,5 @@
 # typografie.js
-Jednoduchá knihovna pro nahrazení specifických znaků pro lepší typografickou správnost.
+Jednoduchá knihovna pro nahrazení specifických znaků pro lepší typografickou správnost. Stále ve vývoji ;-).
 
 Umí se postarat o to, aby
 * Odstavec nekončil spojkou.
