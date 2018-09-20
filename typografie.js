@@ -23,6 +23,11 @@ var Rules = {
       [/ (a|i|o|u|s|z|k|v|A|I|O|U|S|Z|K|V) /g, " $1&nbsp;"],
       [/(\d+[\.])( )(\w|%)/g, "$1"+"&nbsp;"+"$3"]
     ],
+    ligatures: [
+      [/fi/g, "ﬁ"],
+      [/ff/g, "ﬀ"],
+      [/fl/g, "ﬂ"]
+    ],
     // rule for ellipsis instead of 3 dots
     elipse: [
       [/\.{3}/g, "…"]
@@ -57,6 +62,10 @@ function improveTypography(string){
   }
 
   for(let rule of Rules.space){
+    string = string.replace(rule[0], rule[1]);
+  }
+
+  for(let rule of Rules.ligatures){
     string = string.replace(rule[0], rule[1]);
   }
 
