@@ -1,4 +1,8 @@
 var Rules = {
+    // rules for dates
+    date: [
+      [/(\d{2}\.)(\d{2}\.)(\d{4})/g, "$1"+" "+"$2"+" "+"$3"]
+    ],
     // rules for czech quotes
     quote: [
       [/ “/g, " „"],
@@ -53,6 +57,10 @@ var Rules = {
 function improveTypography(string){
   if(typeof string !== 'string')
     throw ("The parametr must be a string");
+
+  for(let rule of Rules.date){
+    string = string.replace(rule[0], rule[1]);
+  }
 
   for(let rule of Rules.quote){
     string = string.replace(rule[0], rule[1]);
