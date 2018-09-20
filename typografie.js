@@ -20,38 +20,21 @@ var Rules = {
     // rules for hard spaces
     space: [
       [/  /g, " "],
-      [/ a /g, " a&nbsp;"],
-      [/ i /g, " i&nbsp;"],
-      [/ o /g, " o&nbsp;"],
-      [/ u /g, " u&nbsp;"],
-      [/ s /g, " s&nbsp;"],
-      [/ z /g, " z&nbsp;"],
-      [/ k /g, " k&nbsp;"],
-      [/ v /g, " v&nbsp;"],
-      [/ A /g, " A&nbsp;"],
-      [/ I /g, " I&nbsp;"],
-      [/ O /g, " O&nbsp;"],
-      [/ U /g, " U&nbsp;"],
-      [/ S /g, " S&nbsp;"],
-      [/ Z /g, " Z&nbsp;"],
-      [/ K /g, " K&nbsp;"],
-      [/ V /g, " V&nbsp;"],
-      [/(\d+)( )(\w|%)/g, "$1"+"&nbsp;"+"$3"]
+      [/ (a|i|o|u|s|z|k|v|A|I|O|U|S|Z|K|V) /g, " $1&nbsp;"],
+      [/(\d+[\.])( )(\w|%)/g, "$1"+"&nbsp;"+"$3"]
     ],
     // rule for ellipsis instead of 3 dots
     elipse: [
-      [/\.\.\./g, "…"]
+      [/\.{3}/g, "…"]
     ],
     // rule for removing dot after a specific abbrs
     shorts: [
-      [/ viz\./g, " viz"],
-      [/ Viz\./g, " Viz"]
+      [/ (v|V)iz\./g, " $1iz"],
     ],
     // rules for valid words
     word: [
-      [/designer/g, "designér"],
-      [/Designer/g, "Designér"],
-      [/vyjímka/g, "výjimka"],
+      [/(d|D)esigner/g, "$1esignér"],
+      [/(v|V)yjímka/g, "$1ýjimka"],
     ]
 };
 
