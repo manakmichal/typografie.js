@@ -6,6 +6,7 @@ Umí se postarat o to, aby
 * Text obsahoval české uvozovky.
 * Byl využit znak elipsis místo 3 teček.
 * Aby se zalomilo celé číslo i s jednotkou.
+* Základní ligratury pro fi, fl, fl
 
 A další. Viz knihovna.
 
