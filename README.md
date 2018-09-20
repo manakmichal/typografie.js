@@ -6,8 +6,8 @@ Umí se postarat o to, aby
 * Text obsahoval české uvozovky.
 * Byl využit znak elipsis místo 3 teček.
 * Aby se zalomilo celé číslo i s jednotkou.
-* Úprava datumů z 10.10.2011 na 10. 10. 2011.
-* Základní ligratury pro fi, fl, fl.
+* Datum vypadalo jako 10. 10. 2011, pokud nevložíte mezery.
+* Se využily ligatury fi, fl, fl.
 
 A další. Viz knihovna.
 
