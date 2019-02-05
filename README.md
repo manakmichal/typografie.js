@@ -10,7 +10,9 @@ Umí se postarat o to, aby
 * Datum vypadalo jako 10. 10. 2011, pokud nevložíte mezery.
 * Se využily ligatury fi, fl, fl.
 
-A další. Viz knihovna.
+A další. Viz soubor typografie.js.
+
+Součástí jsou vybrané (převázně) české jednotky pro různé veličiny - od času, délky až po tlak. Včetně nahrazení mocnin pro obsahy a objemy.
 
 ## Příklad ##
 
