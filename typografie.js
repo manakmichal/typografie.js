@@ -10,6 +10,26 @@ var Rules = {
     dash: [
       [/ - /g, " – "]
     ],
+    units: [
+      [/(\d+)( )(|m)s /g, "$1"+"&nbsp;"+"$3s "],
+      [/(\d+)( )(min|h|d) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(|n|m|c|d|k)m /g, "$1"+"&nbsp;"+"$3m "],
+      [/(\d+)( )(|m|h|d|c|b)l /g, "$1"+"&nbsp;"+"$3l "],
+      [/(\d+)( )(ccm|gal) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(|m|c|d|k)m(\d) /g, "$1"+"&nbsp;"+"$3m$4 "],
+      [/(\d+)( )(ccm|gal) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(ha|a) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(|k|M)J /g, "$1"+"&nbsp;"+"$3J "],
+      [/(\d+)( )(|k)cal /g, "$1"+"&nbsp;"+"$3cal "],
+      [/(\d+)( )(|kWh|M)Wh /g, "$1"+"&nbsp;"+"$3Wh "],
+      [/(\d+)( )(|k)m\/(s|min|h) /g, "$1"+"&nbsp;"+"$3m/$4 "],
+      [/(\d+)( )(K|°C|°F) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(|h|k|M)Pa /g, "$1"+"&nbsp;"+"$3Pa "],
+      [/(\d+)( )(bar|atm) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(|k)W /g, "$1"+"&nbsp;"+"$3 "],
+      [/(\d+)( )(%) /g, "$1"+"&nbsp;"+"$3 "],
+      [/(|m|c|d|k)m(\d) /g, "$1m<sup>$2</sup> "],
+    ],
     // rule for number formatting
     number: [
       [/(\d)(?=(\d{3})+(?!\d))/g, "$1 "]
@@ -62,6 +82,10 @@ function improveTypography(string){
   }
 
   for(let rule of Rules.dash){
+    string = string.replace(rule[0], rule[1]);
+  }
+
+  for(let rule of Rules.units){
     string = string.replace(rule[0], rule[1]);
   }
 
