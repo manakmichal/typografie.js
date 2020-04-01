@@ -66,6 +66,11 @@ var Rules = {
     word: [
       [/(d|D)esigner/g, "$1esignér"],
       [/(v|V)yjímka/g, "$1ýjimka"],
+    ],
+    // custom rules
+    customRules: [
+      [/COVID-19/g, "COVID&#8209;19"],
+      [/(e|E)-mail/g, "$1&#8209;mail"]
     ]
 };
 
@@ -78,6 +83,10 @@ var Rules = {
 function improveTypography(string){
   if(typeof string !== 'string')
     throw ("The parametr must be a string");
+    
+  for(let rule of Rules.customRules){
+    string = string.replace(rule[0], rule[1]);
+  }
 
   for(let rule of Rules.quote){
     string = string.replace(rule[0], rule[1]);
